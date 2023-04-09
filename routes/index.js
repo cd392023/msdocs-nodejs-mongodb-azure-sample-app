@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
       const completedTasks = tasks.filter(task => task.completed === true);
 
       console.log(`Total tasks: ${tasks.length}   Current tasks: ${currentTasks.length}    Completed tasks:  ${completedTasks.length}`)
-      res.render('index', { currentTasks: currentTasks, completedTasks: completedTasks, message: process.env.message });
+      console.log(process.env.message)
+      res.render('index', { currentTasks: currentTasks, completedTasks: completedTasks});
     })
     .catch((err) => {
       console.log(err);
